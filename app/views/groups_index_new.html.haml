@@ -1,0 +1,31 @@
+
+
+
+
+ %body
+  %div.side_bar
+   %div.user_name
+   %div.redit
+   %div.edit
+  %div.group_name
+   %chat
+
+ %div.main
+  %div.edit_space
+   %div.group_name
+   %div.edit_btn
+  %div.chatt
+   %div.name
+   %div.date
+   %div.message
+
+
+%div.footer
+  %form{:action => "/", :method =>"post"}
+  %textarea{:name => "text" }
+  %input{:type => "submit", :value="SEND"}
+
+
+/ render partial: "sample" 部分テンプレート必要
+
+
