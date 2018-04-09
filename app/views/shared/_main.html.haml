@@ -1,0 +1,21 @@
+.main
+  .main__header
+    .main__header__left
+      .main-header__group-name
+        %h3  group name
+      .main-header__user-name
+        %p  username
+    .main__header__right
+      .main-header__right__edit-group
+        %i edit
+
+  .main-message
+    .main-message-container
+      .main-message-box.clearfix
+        .main-message-box__user-name
+          %p user name
+        .main-message-box__date
+          %p date
+        .main-message-box__comment
+          %p comment
+  = render 'shared/footer'
