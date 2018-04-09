@@ -1,8 +1,6 @@
 .wrapper{
   width: 100vw;
   height: 100vh;
-
-
 }
 .clearfix{
   content:"";
@@ -15,10 +13,8 @@
   height: 100vh;
   background-color: #2f3e51;
   float:left
-
 }
 .side-header{
-
   width: 100%;
   height: 100px;
   background-color: #253141;
@@ -31,34 +27,30 @@
      //   display: inline-block;
      // }
 
-   p{
-    color:white;
-   }
+       p{
+        color:white;
+       }
 
  }
-  &__right{
-    float: right;
-    line-height: 6;
-    margin-right: 20px;
-    color: white;
+    &__right{
+      float: right;
+      line-height: 6;
+      margin-right: 20px;
+      color: white;
 
     &__make-group{
           display: inline-block;
-        i{
-    color:white;
-   }
-    }
-   &__edit-user{
-          display: inline-block;
       i{
+    color:white;
+  }
+}
+   &__edit-user{
+        display: inline-block;
+    i{
         color: white;
-
-      }
-
-
+     }
     }
- }
-
+  }
 }
 
 .side-body{
@@ -67,21 +59,16 @@
   background-color: #2f3e51;
   padding-left: 10px;
   &__group-name{
-
-     p{
+    p{
       color: white;
      }
-  }
+}
   &__group-message{
     p{
       color: white;
      }
-
   }
 }
-
-
-
 
 // ---------main---------
 
@@ -92,7 +79,6 @@
   float:left
 }
 
-
 .main__header{
   width: 100%;
   height: 100px;
@@ -102,9 +88,7 @@
 
   &__left{
     float: left;
-
   }
-
   &__right{
     border: 1px solid #38AEF0;
     float: right;
@@ -113,20 +97,9 @@
     color:#38AEF0;
     &__edit-group{
       padding: 5px;
-
     }
-
   }
-
 }
-
-
-
-// .clearfix{
-// content: "";
-// clear: both;
-// display: block;
-// }
 
 .main-message{
   height:calc(100vh - 100px - 100px);
@@ -143,14 +116,11 @@
   &__date{
     float: left;
     margin-left: 10px;
-
   }
   &__comment{
     clear: both;
   }
-
 }
-
 
 .footer{
   width: 100%;
@@ -166,32 +136,12 @@
   &__footer-photo
   {
     float: left;
-
-
-
   }
   &__footer-btn{
     float: left;
   }
-
-
 }
 
-
-
-
-// .footer-box{
-//   &.__text-field{
-//   float: left;
-// }
-//   &.__photo{
-//   float:  left;
-// }
-//   &.__footer-btn{
-//    float:  left;
-//   }
-
-// }
 .footer-box{
   padding: 20px;
 
@@ -208,22 +158,14 @@
     margin-left: -5px;
   background-color: white;
      }
-   &__footer-btn{
+  &__footer-btn{
     float:left;
-  }
-
+     }
   }
 
 .upload-icon{
   display:none;
-
 }
-
-
-
-
-
-
 
 .footer-btn__send{
     background-color: transparent;
@@ -237,19 +179,4 @@
     background-color: #38AEF0;
     color: white;
     font-size: 20px;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
