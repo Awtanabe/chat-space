@@ -70,7 +70,7 @@
   width: calc(100vw - 300px);
   background-color: white;
   float:left;
-  .main__header {
+    &__header {
     width: 100%;
     height: 100px;
     background-color: white;
@@ -142,7 +142,6 @@
     .upload-icon {
       display:none;
     }
-
     .footer-btn__send {
       background-color: transparent;
       border: none;
@@ -158,5 +157,3 @@
     }
   }
 }
-
-
