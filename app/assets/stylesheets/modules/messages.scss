@@ -25,8 +25,8 @@
         line-height: 4;
        p{
         color:white;
-       }
- }
+      }
+  }
     &__right{
       float: right;
       line-height: 6;
@@ -43,7 +43,7 @@
       i{
           color: white;
        }
-      }
+    }
   }
 }
 
@@ -52,16 +52,16 @@
   height: 100px;
   background-color: #2f3e51;
   padding-left: 10px;
-  &__group-name{
-    p{
-      color: white;
-     }
-}
-  &__group-message{
-    p{
-      color: white;
-     }
+    &__group-name{
+      p{
+        color: white;
+       }
   }
+    &__group-message{
+      p{
+        color: white;
+       }
+    }
 }
 
 // ---------main---------
@@ -79,21 +79,20 @@
   background-color: white;
   border-bottom: 1px solid #eeeeee;
   padding-left: 10px;
-
-  &__left{
-    float: left;
-  }
-  &__right{
-    border: 1px solid #38AEF0;
-    float: right;
-    margin: 30px;
-    padding: 10px;
-    color:#38AEF0;
-    &__edit-group{
-      padding: 5px;
+    &__left{
+      float: left;
+    }
+    &__right{
+      border: 1px solid #38AEF0;
+      float: right;
+      margin: 30px;
+      padding: 10px;
+      color:#38AEF0;
+      &__edit-group{
+        padding: 5px;
+      }
     }
   }
-}
 
 .main-message {
   height:calc(100vh - 100px - 100px);
@@ -103,18 +102,17 @@
   width: 100%;
   height: 100px;
   padding-left: 10px;
-
-  &__user-name{
-    float: left;
+    &__user-name{
+      float: left;
+    }
+    &__date{
+      float: left;
+      margin-left: 10px;
+    }
+    &__comment{
+      clear: both;
+    }
   }
-  &__date{
-    float: left;
-    margin-left: 10px;
-  }
-  &__comment{
-    clear: both;
-  }
-}
 
 .footer{
   width: 100%;
@@ -127,52 +125,53 @@
 .footer-box {
   width:100%;
   height: 100%;
-  &__footer-photo
-  {
-    float: left;
-  }
-  &__footer-btn{
-    float: left;
-  }
+    &__footer-photo
+    {
+      float: left;
+    }
+    &__footer-btn{
+      float: left;
+    }
 }
 
 .footer-box {
   padding: 20px;
+    &__text-field{
+      width: 600px;
+      height: 50px;
+      float:left;
+      font-size: 20px;
+    }
+    &__photo{
+      float:left;
+      height: 37px;
+      padding-top:15px;
+      margin-left: -5px;
+    background-color: white;
+          margin-top: 1px;
 
-  &__text-field{
-    width: 600px;
-    height: 50px;
-    float:left;
-    font-size: 20px;
-  }
-  &__photo{
-    float:left;
-    height: 37px;
-    padding-top:15px;
-    margin-left: -5px;
-  background-color: white;
-        margin-top: 1px;
-
-     }
-  &__footer-btn{
-    float:left;
-     }
-  }
-
+       }
+    &__footer-btn{
+      float:left;
+       }
 .upload-icon{
   display:none;
 }
 
 .footer-btn__send{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 10px 30px;
-    appearance: none;
-    padding:5 15px;
-    margin-left: 10px;
-    background-color: #38AEF0;
-    color: white;
-    font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 30px;
+  appearance: none;
+  padding:5 15px;
+  margin-left: 10px;
+  background-color: #38AEF0;
+  color: white;
+  font-size: 20px;
 }
+
+}
+
+
