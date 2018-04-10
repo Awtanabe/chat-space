@@ -1,6 +1,7 @@
 .side-body
-  .side-body__group-name
-    %p gourp name
-    %p gruop name
-  .side-body__group-message
-    %p group message
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .side-body__group-name
+        = group.name
+      .side-body__group-message
+        %p メッセージはまだありません。

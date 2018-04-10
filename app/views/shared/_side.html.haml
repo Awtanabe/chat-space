@@ -2,11 +2,13 @@
   .side-header
     .side-header__left
       .side-header__left__user-name
-        %p username
+        = current_user.name
     .side-header__right
       .side-header__right__make-group
-        %i.fa.fa-pencil-square-o.icon
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o.icon
       .side-header__right__edit-user
-        %i.fa.fa-cog.icon
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog.icon
   = render 'shared/side-body'
 
