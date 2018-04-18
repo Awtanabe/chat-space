@@ -37,6 +37,7 @@ $(function(){
       $(".main-message-container").append(html);
       $(".footer-box__text-field").val('')
       $(".footer-btn__send").prop("disabled", false);
+      $('.main-message').animate({scrollTop: $('.main-message')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert('error');
