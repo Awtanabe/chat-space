@@ -11,6 +11,13 @@ $function(function(){
        processData: false,
        contentType: false
     })
+    .done(function(data){
+      var html = buildHtml(data);
+      $('.main-message-container').append(html)
+      $('footer-box__text-field').val('')
+    }
+
+      )
   })
 
 })
