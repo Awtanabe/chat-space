@@ -8,12 +8,14 @@ class MessagesController < ApplicationController
   end
 
   def create
+
     @message = @group.messages.new(message_params)
       if @message.save
 
-        redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+        # redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+
         respond_to do |format|
-           format.html {redirect_to group_massages_path(@group), notice: 'メッセージが送信されました'}
+           format.html {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
            format.json
         end
 
