@@ -94,11 +94,22 @@
   .main-message {
     height: calc(100vh - 100px - 100px);
     background-color: white;
+    width:100%;
+    overflow-y:scroll;
+    padding-top:10px;
+
+  }
+
+  .main-message-container{
+    width:100%;
+     padding-top: 10px;
   }
   .main-message-box {
     width: 100%;
     height: 100px;
-    padding-left: 10px;
+    padding-left: 36px;
+    margin-bottom: 9px;
+
     &__user-name{
       float: left;
     }
@@ -123,18 +134,23 @@
     width:100%;
     height: 100%;
     &__text-field{
-      width: 600px;
-      height: 50px;
+      width: 800px;
+      height: 46px;
       float:left;
       font-size: 20px;
+      margin-left: 10px;
     }
     &__photo {
       float:left;
-      height: 37px;
+      height: 33px;
       padding-top:15px;
       margin-left: -5px;
       background-color: white;
       margin-top: 1px;
+      width: 30px;
+      font-size: 28px;
+      line-height: 25px;
+      padding-right: 7px;
     }
     &__footer-btn{
       float:left;
@@ -154,6 +170,7 @@
       background-color: #38AEF0;
       color: white;
       font-size: 20px;
+      margin-left:20px;
     }
   }
 }
