@@ -1,36 +1,47 @@
 $(function(){
    function buildHTML(message){
-    let html = `<p>
-                 <strong>
-                  <a href = ${message.id}>${message.user_name}
-                  </a>
-
-                 </strong>
-                 ${message.content}
-               </p>`
-         return html;
+    var img = ""
+    if (message.image){
+     img = `<img src="${message.image}">`
+   }
+    let html =`<div class="main-message-box clearfix">
+                <div class="main-message-box__user-name">
+                  ${ message.name }
+                </div>
+                <div class="main-message-box__date">
+                  ${ message.created_at }
+                </div>
+                <div class="main-message-box__comment">
+                  ${ message.content}
+                  ${img}
+                </div>
+              </div>`
+    return html;
    }
 
-  $('#new_message').on('submit',function(e){
+  $("#new_message").on("submit",function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-
     $.ajax({
        url: url,
-       type: "POST",
+       type: 'POST',
        data: formData,
        dataType: 'json',
        processData: false,
        contentType: false
     })
     .done(function(data){
-      let html = buildHTML(data);
-      $('.main-message-container').append(html);
-      $('.footer-box__text-field').val('')
+      //console.log(data.get(image));
+      var html = buildHTML(data);
+      $(".main-message-container").append(html);
+      $(".footer-box__text-field").val('')
       $(".footer-btn__send").prop("disabled", false);
     })
+    .fail(function(){
+      alert('error');
     })
+  });
 });
 
 
