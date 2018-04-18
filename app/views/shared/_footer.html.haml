@@ -1,10 +1,26 @@
 .footer
   .footer-box.clearfix
-    %form{:action => "#", :method => "post"}
-      %input{:name => "body", :type => "text", :placeholder => "type a message",class:"footer-box__text-field"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'footer-box__text-field', placeholder: 'type a message'
       .footer-box__photo
-        %label.fa.fa-picture-o.icon
-          %input{:name => "image", :type => "file", class:"upload-icon"}
+        = f.label :image, class: ''  do
+          %i.fa.fa-picture-o
+          = f.file_field :image, class: 'upload-icon' sdfsd
       .footer-box__footer-btn
-        %button{:type =>"sumbit",:value => "SEND",class:"footer-btn__send"}
-          Send
+        = f.submit 'Send', class: 'footer-btn__send'
+
+
+/ .form
+/       = form_for [@group, @message] do |f|
+/         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+
+/         .form__mask
+/           = f.label :image, class: 'form__mask__image' do
+/             = fa_icon 'picture-o', class: 'icon'
+/             = f.file_field :image, class: 'hidden'
+/         = f.submit 'Send', class: 'form__submit'
+
+
+
+
+

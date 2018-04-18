@@ -1,0 +1,24 @@
+.main-message-box.clearfix
+  .main-message-box__user-name
+    = message.user.name
+  .main-message-box__date
+    = message.created_at
+  .main-message-box__comment
+    - if message.content.present?
+      = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+/     %p comment
+
+
+/ .message
+/   .upper-message
+/     .upper-message__user-name
+/       = message.user.name
+/     .upper-message__date
+/       = format_posted_time(message.created_at)
+/   .lower-meesage
+/     - if message.content.present?
+/       %p.lower-message__content
+/         = message.content
+/     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
