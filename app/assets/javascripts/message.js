@@ -12,7 +12,7 @@ $(function(){
                   ${ message.created_at }
                 </div>
                 <div class="main-message-box__comment">
-                  ${ message.content}
+                  ${ message.content}<br>
                   ${img}
                 </div>
               </div>`
@@ -36,6 +36,7 @@ $(function(){
       var html = buildHTML(data);
       $(".main-message-container").append(html);
       $(".footer-box__text-field").val('')
+      $(".upload-icon").val('');
       $(".footer-btn__send").prop("disabled", false);
       $('.main-message').animate({scrollTop: $('.main-message')[0].scrollHeight}, 'fast');
     })
