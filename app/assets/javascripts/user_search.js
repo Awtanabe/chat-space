@@ -1,6 +1,7 @@
 $(function(){
 
   var search_list = $('#user-search-result');
+  // var groupUserList = $('#chat-group-users');
 
  function appendUser(user) {
      var html =
@@ -8,19 +9,20 @@ $(function(){
       <p class="chat-group-user__name">${user.name}</p>
         <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
         </div>`
-         search_list.append(html); }
+         search_list.append(html);
+       }
 
- $("#user-search-field").on("keyup",function(){
+
+ $("#user-search-field").on("keyup",function(e){
+  e.preventDefault();
   var input = $("#user-search-field").val();
-  console.log(input);
- });
+
 
   $.ajax({
     type: 'GET',
-    url:'/users',
-    data: {keyword:input},
+    url: '/users',
+    data: { keyword: input },
     dataType: 'json'
-
   })
   .done(function(users){
     $('#user-search-result').empty();
@@ -30,6 +32,12 @@ $(function(){
         });
     }
     else{
+      console.log('test');
       appendNoUser('一致するユーザーはいません');
     }
+  })
+    .fail(function(){
+      alert('ユーザー検索に失敗しました')
+    })
+});
 });

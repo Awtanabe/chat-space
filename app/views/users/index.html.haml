@@ -1,0 +1,24 @@
+.wrapper.clearfix
+  = render 'shared/side'
+  .main
+    .main__header
+      .main__header__left
+        .main-header__group-name
+          %h3  group name
+        .main-header__user-name
+          %p  username
+      .main__header__right
+        .main-header__right__edit-group
+          %i edit
+    .main-message
+      .main-message-container
+        = render partial: 'shared/message', collection: @messages
+    .footer
+      .footer-box.clearfix
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'footer-box__text-field', placeholder: 'type a message'
+          .footer-box__photo
+            = f.label :image, class: 'fa fa-picture-o' do
+              = f.file_field :image, class: 'upload-icon'
+          .footer-box__footer-btn
+            = f.submit 'Send', class: 'footer-btn__send'
