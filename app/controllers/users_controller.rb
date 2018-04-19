@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+   def index
+     @user =User.where('name LIKE(?)', "%#{pramas[:keeyword]}%").where.not(id:current_user)
+     respond_to do |format|
+       format.html
+       format.json
+     end
+
+   end
+
+
     def edit
   end
 
