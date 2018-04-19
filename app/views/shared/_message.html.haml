@@ -2,7 +2,7 @@
   .main-message-box__user-name
     = message.user.name
   .main-message-box__date
-    = message.created_at
+    = message.created_at.to_s(:created_at)
   .main-message-box__comment
     - if message.content.present?
       = message.content
