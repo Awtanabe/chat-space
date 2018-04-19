@@ -40,11 +40,12 @@ $(function(){
       $(".footer-btn__send").prop("disabled", false);
       $('.main-message').animate({scrollTop: $('.main-message')[0].scrollHeight}, 'fast');
     })
-    .fail(function(){
+    .fail(function(a,b,c){
       alert('error');
+      console.log(a);
+      console.log(b);
+      console.log(c);
     })
   });
 });
-
-
 
