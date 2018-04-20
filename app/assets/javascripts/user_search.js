@@ -1,8 +1,6 @@
 $(function() {
 
     var search_list = $('#user-search-result');
-    // var groupUserList = $('#chat-group-users');
-
     function appendUser(user) {
         var html =
             `<div class="chat-group-user clearfix">
@@ -11,8 +9,6 @@ $(function() {
         </div>`
         search_list.append(html);
     }
-
-
 
     $("#user-search-field").on("keyup", function(e) {
         e.preventDefault();

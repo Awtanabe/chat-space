@@ -11,11 +11,9 @@
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog.icon
   .side-body
-    / - binding.pry
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) do
         .side-body__group-name
           = group.name
         .side-body__group-message
           = group.show_last_message
-
