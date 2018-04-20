@@ -10,5 +10,10 @@
       .side-header__right__edit-user
         = link_to edit_user_path(current_user) do
           %i.fa.fa-cog.icon
-  = render 'shared/side-body'
-
+  .side-body
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .side-body__group-name
+          = group.name
+        .side-body__group-message
+          = group.show_last_message
