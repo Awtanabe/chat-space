@@ -13,6 +13,7 @@ $(function() {
     $("#user-search-field").on("keyup", function(e) {
         e.preventDefault();
         var input = $("#user-search-field").val();
+         if (input.length !== 0){
         $.ajax({
                 type: 'GET',
                 url: '/users',
@@ -30,6 +31,7 @@ $(function() {
             .fail(function() {
                 alert('ユーザー検索に失敗しました')
             })
+        }
     })
 
     function addUser(user_id, user_name) {
