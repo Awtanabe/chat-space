@@ -1,21 +1,13 @@
 $(function() {
 
-    setInterval(function() {
-        $.ajax({
-                url: location.href.json,
-            })
-            .done(function(data) {})
-            .fail(function(data) {});
-    } else {
-        clearInterval(interval);
-    }, 5000);
-
     function buildHTML(message) {
+        let a = `${message.id}`
+        console.log("appending number:" + a)
         var img = ""
         if (message.image) {
             img = `<img src="${message.image}">`
         }
-        let html = `<div class="main-message-box clearfix">
+        let html = `<div class="main-message-box clearfix" data-id="${message.id}">
                 <div class="main-message-box__user-name">
                   ${ message.name }
                 </div>
@@ -29,6 +21,8 @@ $(function() {
               </div>`
         return html;
     }
+
+
 
     $("#new_message").on("submit", function(e) {
         e.preventDefault();
@@ -58,4 +52,36 @@ $(function() {
                 console.log(c);
             })
     });
+
+
+    $(function() {
+        setInterval(update, 5000);
+    });
+
+    function update() {
+        var message_id = $('.main-message-box').last().data('id');
+        console.log("refreshing number:" + message_id)
+        $.ajax({
+                url: location.href,
+                dataType: 'json',
+                type: 'GET',
+                data: { id: message_id },
+            })
+
+            .done(function(data) {
+                // console.log(data)
+                data.messages.forEach(function(message) {
+                    console.log("database id number" + message.id)
+                    if (message.id > message_id) {
+                        $('.main-message-container').append(buildHTML(message));
+                    }
+                });
+
+            })
+            .fail(function(data) {
+                alert('自動更新に失敗しました');
+            });
+    }
+
+
 });
