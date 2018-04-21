@@ -33,7 +33,6 @@ $(function() {
                 contentType: false
             })
             .done(function(data) {
-                //console.log(data.get(image));
                 var html = buildHTML(data);
                 $(".main-message-container").append(html);
                 $(".footer-box__text-field").val('')
@@ -50,29 +49,24 @@ $(function() {
     });
 
     $(function() {
-        setInterval(update, 5000);
+        setInterval(update, 15000);
     });
 
     function update() {
         var message_id = $('.main-message-box').last().data('id');
-        if (message_id == message_id) {
-            var message_id = 0
-            $.ajax({
-                    url: location.href,
-                    dataType: 'json',
-                    type: 'GET',
-                    data: { id: message_id },
-                })
-                .done(function(data) {
-                    data.messages.forEach(function(message) {
-                        if (message.id > message_id) {
-                            $('.main-message-container').append(buildHTML(message));
-                        }
-                    });
-                })
-                .fail(function(data) {
-                    alert('自動更新に失敗しました');
+        $.ajax({
+                url: location.href,
+                dataType: 'json',
+                type: 'GET',
+                data: { message_id: message_id },
+            })
+            .done(function(data) {
+                data.messages.forEach(function(message) {
+                    $('.main-message-container').append(buildHTML(message));
                 });
-        }
+            })
+            .fail(function(data) {
+                alert('自動更新に失敗しました');
+            });
     }
 });
