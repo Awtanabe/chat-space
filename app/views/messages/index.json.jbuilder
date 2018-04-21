@@ -5,6 +5,5 @@ if @new_messages.present?
   json.id            message.id
   json.name          message.user.name
   json.created_at  message.created_at
-  json.updated_at  message.updated_at
-end
+  end
 end

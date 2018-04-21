@@ -1,8 +1,6 @@
 $(function() {
 
     function buildHTML(message) {
-        let a = `${message.id}`
-        console.log("appending number:" + a)
         var img = ""
         if (message.image) {
             img = `<img src="${message.image}">`
@@ -21,8 +19,6 @@ $(function() {
               </div>`
         return html;
     }
-
-
 
     $("#new_message").on("submit", function(e) {
         e.preventDefault();
@@ -53,35 +49,30 @@ $(function() {
             })
     });
 
-
     $(function() {
         setInterval(update, 5000);
     });
 
     function update() {
         var message_id = $('.main-message-box').last().data('id');
-        console.log("refreshing number:" + message_id)
-        $.ajax({
-                url: location.href,
-                dataType: 'json',
-                type: 'GET',
-                data: { id: message_id },
-            })
-
-            .done(function(data) {
-                // console.log(data)
-                data.messages.forEach(function(message) {
-                    console.log("database id number" + message.id)
-                    if (message.id > message_id) {
-                        $('.main-message-container').append(buildHTML(message));
-                    }
+        if (message_id == message_id) {
+            var message_id = 0
+            $.ajax({
+                    url: location.href,
+                    dataType: 'json',
+                    type: 'GET',
+                    data: { id: message_id },
+                })
+                .done(function(data) {
+                    data.messages.forEach(function(message) {
+                        if (message.id > message_id) {
+                            $('.main-message-container').append(buildHTML(message));
+                        }
+                    });
+                })
+                .fail(function(data) {
+                    alert('自動更新に失敗しました');
                 });
-
-            })
-            .fail(function(data) {
-                alert('自動更新に失敗しました');
-            });
+        }
     }
-
-
 });
