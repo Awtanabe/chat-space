@@ -49,12 +49,13 @@ $(function() {
     });
 
    $(function() {
-    var interval = setInterval(update, 5000);
+     let set_timer = setInterval(update, 5000);
     });
+
+    window.location.href.match(/\/groups\/\d+\/messages/) ?  setInterval(update, 5000) : clearInterval(set_timer)
 
     function update() {
 
-   (window.location.href.match(/\/groups\/\d+\/messages/)) ?  setInterval(update, 5000) : clearInterval(interval)
 
         var message_id = $('.main-message-box').last().data('id');
         $.ajax({
