@@ -20,5 +20,4 @@
           .footer-box__photo
             = f.label :image, class: 'fa fa-picture-o' do
               = f.file_field :image, class: 'upload-icon'
-          .footer-box__footer-btn
-            = f.submit 'Send', class: 'footer-btn__send'
+          = f.submit 'Send', class: 'footer-btn__send footer-box__footer-btn'
