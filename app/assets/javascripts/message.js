@@ -48,10 +48,7 @@ $(function() {
     window.location.href.match(/\/groups\/\d+\/messages/) ?  setInterval(update, 2000) : clearInterval(setInterval(update, 2000))
 
     function update() {
-
-
         var message_id = $('.main-message-box').last().data('id');
-        console.log(message_id);
         $.ajax({
                 url: location.href,
                 dataType: 'json',
