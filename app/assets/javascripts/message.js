@@ -42,22 +42,16 @@ $(function() {
             })
             .fail(function(a, b, c) {
                 alert('error');
-                console.log(a);
-                console.log(b);
-                console.log(c);
             })
     });
 
-   $(function() {
-     let set_timer = setInterval(update, 5000);
-    });
-
-    window.location.href.match(/\/groups\/\d+\/messages/) ?  setInterval(update, 5000) : clearInterval(set_timer)
+    window.location.href.match(/\/groups\/\d+\/messages/) ?  setInterval(update, 2000) : clearInterval(setInterval(update, 2000))
 
     function update() {
 
 
         var message_id = $('.main-message-box').last().data('id');
+        console.log(message_id);
         $.ajax({
                 url: location.href,
                 dataType: 'json',
