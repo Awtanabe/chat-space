@@ -2,7 +2,9 @@
 lock "~> 3.10.2"
 
 set :application, "railsapp"
-set :repo_url, "git@example.com:Awtanabe/chat-space.git"
+# set :repo_url, "git@example.com:Awtanabe/chat-space.git"
+set :repo_url, "https://github.com/Awtanabe/chat-space.git"
+
 
 
 
