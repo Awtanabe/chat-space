@@ -53,7 +53,7 @@ $(function() {
                 data: { message_id: message_id },
             })
             .done(function(data) {
-                data.messages.forEach(function(message) {
+                data.forEach(function(message) {
                     $('.main-message-container').append(buildHTML(message));
                 });
             })
