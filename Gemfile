@@ -53,7 +53,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'devise'
 gem 'carrierwave'
-gem 'fog'
+gem 'fog', '1.41.0'
 gem 'mini_magick'
 gem 'font-awesome-rails'
 
