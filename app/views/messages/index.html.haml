@@ -9,7 +9,7 @@
           %p  MEMBER:username
       .main__header__right
         .main-header__right__edit-group
-          %i edit
+          = link_to "edit", "/groups/#{@group.id}/edit", method: :get
     .main-message
       .main-message-container
         = render partial: 'shared/message', collection: @messages
