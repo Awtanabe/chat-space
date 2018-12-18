@@ -1,0 +1,15 @@
+.header
+  .side
+    .logo
+      p Chatspase
+    .search-box
+      = form_tag search_users_path , method: 'get' do
+        = text_field_tag :keyword, params[:keyword]
+        = submit_tag "Search"
+  .right
+.container
+  .wrapper
+    .user_index
+    - if @users
+      - @users.each do |user|
+        = user.name

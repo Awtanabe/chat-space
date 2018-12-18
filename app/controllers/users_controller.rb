@@ -6,10 +6,15 @@ class UsersController < ApplicationController
        format.html
        format.json
      end
-
    end
-    def edit
-  end
+
+   def search
+      @users = User.search(params[:keyword])
+      
+   end
+
+   def edit
+   end
 
   def update
     if current_user.update(user_params)
