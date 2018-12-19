@@ -14,6 +14,11 @@
             = f.text_field :name, autofocus: true
         .field
           .field-label
+            = f.label :avatar
+          .field-input
+            = f.file_field :avatar
+        .field
+          .field-label
             = f.label :email
           .field-input
             = f.email_field :email
