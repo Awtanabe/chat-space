@@ -18,8 +18,14 @@
     }
   }
 
-
-
+.avatar{
+  height:150px;
+  width:150px;
+  border-radius:50%;
+}
+.hidden{
+  display:none;
+}
   .account-page__header {
     h2 {
       margin-bottom: 10px;
