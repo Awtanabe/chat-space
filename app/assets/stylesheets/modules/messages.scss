@@ -157,6 +157,10 @@
     &__comment{
       clear: both;
       font-size: 14px;
+      .lower-message__image{
+        width:800px;
+        height:500px;
+      }
     }
   }
 
