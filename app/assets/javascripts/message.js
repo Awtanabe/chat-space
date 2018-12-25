@@ -30,12 +30,14 @@ $(function() {
                 contentType: false
             })
             .done(function(data) {
+              console.log(data)
                 var html = buildHTML(data);
                 $(".main-message-container").append(html);
                 $(".footer-box__text-field").val('')
                 $(".upload-icon").val('');
                 $(".footer-btn__send").prop("disabled", false);
                 $('.main-message').animate({ scrollTop: $('.main-message')[0].scrollHeight }, 'fast');
+               console.log($('.main-message-container')[0].scrollHeigh)
             })
             .fail(function(a, b, c) {
                 alert('error');

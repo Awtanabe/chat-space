@@ -1,4 +1,4 @@
-/*$(function() {
+$(function() {
 
     var search_list = $('#user-search-result');
     function appendUser(user) {
@@ -47,8 +47,11 @@
     $('#user-search-result').on('click', '.chat-group-user__btn--add', function() {
         var user_id = $(this).data('user-id');
         var user_name = $(this).data('user-name');
+        console.log(this)
         addUser(user_id, user_name);
+        console.log($(this).parent())
         $(this).parent().remove();
+
     })
 
     $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function() {
@@ -56,4 +59,3 @@
     })
 
 });
-*/
