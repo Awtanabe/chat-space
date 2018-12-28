@@ -441,6 +441,7 @@ DEPENDENCIES
   erb2haml
   factory_girl_rails (~> 4.4.1)
   fog (= 1.41.0)
+  fog-aws
   font-awesome-rails
   haml-rails
   jbuilder (~> 2.5)
@@ -462,4 +463,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.2
+   1.16.3

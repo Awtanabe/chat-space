@@ -58,6 +58,7 @@ gem 'carrierwave'
 gem 'fog', '1.41.0'
 gem 'mini_magick'
 gem 'font-awesome-rails'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn'

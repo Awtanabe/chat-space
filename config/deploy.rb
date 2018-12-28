@@ -1,20 +1,9 @@
-# config valid for current version and patch releases of Capistrano
+# config valid only for current version of Capistrano
+lock '3.10.2'
 
-set :default_env, {
-  rbenv_root: "/usr/local/rbenv",
-  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
-}
-lock "~> 3.10.2"
+set :application, 'chat-space'
+set :repo_url,  'git@github.com:Awtanabe/chat-space.git'
 
-set :application, "railsapp"
-# set :repo_url, "git@example.com:Awtanabe/chat-space.git"
-set :repo_url, "https://github.com/Awtanabe/chat-space.git"
-
-
-
-# secrets.yml用のシンボリックリンクを追加
 set :linked_files, %w{ config/secrets.yml }
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
@@ -23,12 +12,18 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['/Users/watanabeakifumi/.ssh/railsapp.pem']
-
+                  keys: ['~/.ssh/chat-space-key.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
+
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
