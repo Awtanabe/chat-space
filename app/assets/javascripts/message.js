@@ -45,7 +45,7 @@ $(function() {
             })
     });
 
-    window.location.href.match(/\/groups\/\d+\/messages/) ? setInterval(update, 2000) : clearInterval(setInterval(update, 2000))
+    window.location.href.match(/\/groups\/\d+\/messages/) ? setInterval(update, 100000) : clearInterval(setInterval(update, 2000))
 
     function update() {
         var message_id = $('.main-message-box').last().data('id');

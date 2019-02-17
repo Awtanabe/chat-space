@@ -10,8 +10,11 @@ class User < ApplicationRecord
 
   def self.search(keyword)
    if keyword
-     User.where(['name LIKE', "%{keyword}%"])
+     User.where(['name LIKE ?', "%{keyword}%"])
    end
   end
 
+  def greet
+     'hello'
+  end
 end
