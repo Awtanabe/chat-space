@@ -61,5 +61,7 @@ gem 'font-awesome-rails'
 gem 'fog-aws'
 
 group :production do
-  gem 'unicorn'
+  gem 'unicorn', '5.4.1'
 end
+
+
