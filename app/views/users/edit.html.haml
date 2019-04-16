@@ -13,13 +13,15 @@
           .field-input
             = f.text_field :name, autofocus: true
         .field
-          .field-label
-            = f.label :avatar  do
-              = image_tag current_user.avatar.url, class: 'avatar'
-              = f.file_field :avatar, class: 'hidden'
-              -# = f.file_field :avataer, :class => 'hidden'
-          .field-input
-            = f.text_field :name, autofocus: true
+          - unless current_user.avatar.url.blank?
+            .field-label
+        
+              = f.label :avatar  do
+                = image_tag current_user.avatar.url, class: 'avatar'
+                = f.file_field :avatar, class: 'hidden'
+                -# = f.file_field :avataer, :class => 'hidden'
+            .field-input
+              = f.text_field :name, autofocus: true
         .field
           .field-label
             = f.label :email
