@@ -1,6 +1,7 @@
 $(function() {
 
     function buildHTML(message) {
+        debugger
         var image = `${message.image}` != "null" ?
             `<img src="${message.image}">` : ``
         var html = `<div class="main-message-box clearfix" data-id="${message.id}">
@@ -31,7 +32,7 @@ $(function() {
                 contentType: false
             })
             .done(function(data) {
-                console.log(data)
+        
                 var html = buildHTML(data);
                 $(".main-message-container").append(html);
                 $(".footer-box__text-field").val('')
@@ -45,8 +46,9 @@ $(function() {
             })
     });
 
-    window.location.href.match(/\/groups\/\d+\/messages/) ? setInterval(update, 100000) : clearInterval(setInterval(update, 2000))
+    // window.location.href.match(/\/groups\/\d+\/messages/) ? setInterval(update, 100000) : clearInterval(setInterval(update, 2000))
 
+    setInterval(update, 30000) 
     function update() {
         var message_id = $('.main-message-box').last().data('id');
         $.ajax({
